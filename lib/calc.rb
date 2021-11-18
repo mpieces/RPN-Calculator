@@ -15,14 +15,13 @@ OPERATORS = [ '+', '-', '*', '/' ].freeze
         if item.is_numeric?
           @stack << item.to_f
           puts @stack.last 
-        elsif OPERATORS.include?(item) 
-          # run computation
+        elsif OPERATORS.include?(item)
+          puts "Enter a number first" if @stack.empty? 
           compute(item)
         elsif item == 'q'
-          # exit program
           return 
         else
-          "Error: Please enter a number or operator"
+          puts "Error: Please enter a number or operator"
         end 
       end
     end
@@ -31,9 +30,8 @@ OPERATORS = [ '+', '-', '*', '/' ].freeze
   def compute(operator)
     operands = @stack.pop(2)
     result = operands.inject(operator)
-    # result = op1.public_send(operator, op2)  if operator a string
     @stack << result
-    puts "Result =  #{@stack.last} "
+    puts "Result =  #{@stack.last}" unless @stack.empty?
   end
 end 
 
@@ -44,10 +42,13 @@ class String
   end
 end  
 
-
 Calculator.new.evaluate_input
 
 
+
+# Error handling:
+# User enters input that is not a number or NO input 
+# User enters operator first (stack array empty)
 
 
 
@@ -64,8 +65,6 @@ Calculator.new.evaluate_input
 # 5 - 18 = -13  [-13]
 # > 13 +      [-13, 13 +]
 # 0.0
-
-
 
 # [ 4, 3,13, 5, / , + ]
 # /
