@@ -31,7 +31,6 @@ $ ruby lib/calc.rb
 ```
 
 At this point you should see "RPN Calculator" in your terminal. 🎉🎉🎉
-enter 1+ numbers (separated by spaces) and then either hit 'Enter' or add operators after the numbers. 
 
 ### How to use the calculator
 #### Example Input/Output
