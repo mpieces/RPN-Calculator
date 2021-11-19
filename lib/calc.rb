@@ -9,7 +9,7 @@ OPERATORS = [ '+', '-', '*', '/' ].freeze
   end
 
   def evaluate_input
-    puts "Calculator 2.0 \nEnter 'q' to quit."
+    puts "RPN Calculator\nEnter 'q' to quit."
     while true 
       print ">"
       input = get_user_input
